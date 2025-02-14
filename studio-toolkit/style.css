@@ -414,14 +414,14 @@ svg{
 }
 
 #debug-header h2 {
-    background-color: var(--header);
+    background-color: var(--success-green);
     padding: var(--padding);
     text-align: left;
     font-family: 'Inconsolata', sans-serif;
     font-weight: 700;
     font-style: bold;
     font-size: var(--header-size);
-    color: var(--text-mid);
+    color: black;
 }
 
 #debug-body {
@@ -429,13 +429,13 @@ svg{
     padding: var(--padding);
     margin: 10px;
     overflow-y: auto;
-    background-color: var(--text-light);
+    background-color: black;
     font-family: 'inconsolata', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: var(--modal-body-size);
     line-height: 1.8;
-    color: black;
+    color: var(--text-light);
 }
 
 .debug-modal-button {
@@ -467,17 +467,20 @@ a:hover {
 
 #success-icon svg {
     fill: var(--success-green);
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 #error-icon svg {
     fill:var(--error-red);
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 #warning-icon svg {
     fill: var(--warning-yellow);
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 #settings-notification-dot {
