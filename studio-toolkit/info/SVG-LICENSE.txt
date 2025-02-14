@@ -1,3 +1,4 @@
+==================== SVG ICONS - MIT ====================  
 Heroicons - MIT License
 Copyright (c) 2020 Refactoring UI Inc.
 
