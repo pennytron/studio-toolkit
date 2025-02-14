@@ -1,0 +1,545 @@
+/* FONTS */
+@font-face {
+    font-family: 'Source Sans';
+    src: url('./fonts/SourceSans3-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Source Sans';
+    src: url('./fonts/SourceSans3-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Source Sans';
+    src: url('./fonts/SourceSans3-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url('./fonts/Inconsolata-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url('./fonts/Inconsolata-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+/* COLOUR & FONT SIZE VARIABLES */
+:root {
+    --bg: #212121;
+    --text-light: #D6D6D6;
+    --text-mid: #b0b0b0;
+    --highlight: rgb(0, 157, 255);
+    --clicked-link: #6C5CE7;
+    --button: #292929;
+    --hover: #323232;
+    --header:rgb(0, 157, 255);
+    --disabled: #555555;
+    --warning-yellow: #f8d01c;
+    --error-red: #FF5A5A;
+    --success-green:#4CAF50;
+    --header-size: 1rem;
+    --modal-header-size: 1.25rem;
+    --tab-size: 0.85rem;
+    --modal-content-size: 0.9rem;
+    --footer-size: 0.6rem;
+    --button-size: 0.8rem;
+    --svg-sml: 14px;
+    --svg-lrg: 16px;
+    --padding: 5px;
+    --stroke: 1px;
+    --border-radius: 4px;
+  }
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.generic-btn,
+.bug-btn{
+    background: none;
+    border: none;
+}
+
+svg{
+    height:0px;
+    width:0px;
+}
+
+/* -----------------------------------
+   Header Section
+----------------------------------- */
+#header {
+    background-color: var(--bg);
+    color: var(--header);
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#header h1 {
+    white-space: nowrap;
+    font-family: 'Source Sans', sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    font-size: var(--header-size);
+    margin-left: 3px;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#header .icon-group{
+    display: flex;
+    gap: 4px;
+    position: relative;
+}
+
+#settings-btn{
+    position: relative;
+}
+
+#header .icon-group svg,
+#header .bug-btn svg {
+    width: var(--svg-sml);
+    height: var(--svg-sml);
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+#header .generic-btn svg:hover {
+    fill: var(--highlight);
+}
+
+#favourites-btn.active svg {
+    fill: var(--highlight);
+}
+
+#header .bug-btn,
+#header .bug-btn svg {
+    fill: var(--success-green);
+    cursor: auto;
+}
+
+/* -----------------------------------
+   Empty Tabs Messaging
+----------------------------------- */
+
+.empty-folder-message {
+    text-align: center;
+    padding: var(--padding);
+    font-size: var(--modal-body-size);
+    color: var(--text-light);
+    background-color: transparent;
+    margin: 5px auto;
+    max-width: 400px;
+    font-family: 'Source Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+/* -----------------------------------
+   Tabs Section
+----------------------------------- */
+#tabs {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    padding: var(--padding);
+}
+
+.tab-button {
+    background-color: transparent;
+    padding: var(--padding);
+    text-align: left;
+    cursor: pointer;
+    border: 0px;
+    border-bottom: var(--stroke) solid var(--highlight);
+    font-family: 'Source Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--tab-size);
+    color: var(--text-mid);
+}
+
+.tab-button:hover {
+    background-color: var(--hover);
+}
+
+.caret {
+    margin-right: 8px; /* Add spacing between caret and tab text */
+    display: inline-block; 
+    vertical-align: middle; 
+    color: var(--highlight);
+}
+
+/* -----------------------------------
+   General Tab Contents
+----------------------------------- */
+.tab-content {
+    position: relative;
+    background-color: transparent;
+    padding: calc(var(--padding)/2);
+    font-family: 'Source Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--button-size);
+    color: var(--text-mid);
+}
+
+.tab-content .file-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.favourites-container {
+    display: none;
+    background-color: var(--bg);
+    padding: var(--padding);
+}
+
+.favourites-container.active {
+    display: block;
+}
+
+.favourites-contents {
+    position: relative;
+    padding: var(--padding);
+    background-color: var(--bg);
+    border: var(--stroke) solid var(--header);
+    border-radius: var(--border-radius);
+}
+
+/* -----------------------------------
+   Shared Wrapper Styling
+----------------------------------- */
+.content-wrapper,
+.favourites-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.tab-content-button,
+.favourites-container .favourite-content-button {
+    background-color: var(--button);
+    width: 100%;
+    display: flex;
+    text-align: left;
+    padding: var(--padding);
+    margin-top: calc(var(--padding)/2);
+    margin-bottom: calc(var(--padding)/2);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: 'Source Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--button-size);
+    color: var(--text-mid);
+}
+
+.tab-content-button:hover,
+.favourites-container .favourite-content-button:hover {
+    background-color: var(--hover);
+}
+
+.fav-icon, .non-fav-icon {
+    position: absolute;
+    right: calc(var(--padding)*2);
+    width: var(--svg-lrg);
+    height: var(--svg-lrg);
+    margin-top: calc(var(--padding)/4);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.fav-icon {
+    color: var(--highlight);
+}
+
+.fav-icon:hover {
+    color: var(--disabled);
+}
+
+.fav-icon:active{
+    color: var(--highlight);
+}
+
+.non-fav-icon {
+    color: var(--disabled);
+}
+
+.non-fav-icon:hover {
+    color: var(--highlight);
+}
+
+.non-fav-icon:active{
+    color: var(--disabled);
+}
+
+/* -----------------------------------
+   Modals and Overlays
+----------------------------------- */
+
+.modal-body p,
+.modal-body ul {
+    margin-bottom: 16px; /* Add space between paragraphs and lists */
+}
+
+.modal {
+    display: none;
+    background: var(--bg);
+    border: var(--stroke) solid var(--header);
+    border-radius: var(--border-radius);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    width: 80%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header h2{
+    background-color:var(--header);
+    padding: var(--padding);
+    text-align: left;
+    font-family: 'Source Sans', sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: var(--modal-header-size);
+    color: var(--bg);
+    padding-left: 10px;
+}
+
+.modal-body {
+    flex: 1;
+    padding: var(--padding);
+    margin: var(--padding);
+    overflow-y: auto;
+    background-color: var(--bg);
+    font-family: 'Source Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--modal-body-size);
+    color: var(--text-mid);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 16px;
+    line-height: 1.6;
+}
+
+.modal-body ul ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.js-version {
+    color:var(--disabled);
+    text-align: right;
+    font-style: italic;
+    font-size: var(--footer-size);
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-button,
+.debug-modal-button {
+    background: var(--button);
+    color: var(--text-mid);
+    font-size: var(--button-size);
+    padding: var(--padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: center;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.modal-button:hover,
+.debug-modal-button:hover {
+    background: var(--hover);
+}
+
+.modal-button.active
+.debug-modal-button.active {
+    background: var(--highlight);
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#debug-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    background: var(--bg);
+    border: var(--stroke) solid var(--success-green);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#debug-header h2 {
+    background-color: var(--header);
+    padding: var(--padding);
+    text-align: left;
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: var(--header-size);
+    color: var(--text-mid);
+}
+
+#debug-body {
+    flex: 1;
+    padding: var(--padding);
+    margin: 10px;
+    overflow-y: auto;
+    background-color: var(--text-light);
+    font-family: 'inconsolata', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--modal-body-size);
+    line-height: 1.8;
+    color: black;
+}
+
+.debug-modal-button {
+    margin: 0px 10px 10px 0px;
+}
+
+a {
+    color: var(--highlight); /* Blue link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the link stand out */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: var(--clicked-link); /* Darker blue on hover */
+}
+
+/* -----------------------------------
+   Success, Warning & Error Icons
+----------------------------------- */
+#success-icon, #error-icon, #warning-icon {
+    margin-left: 10px;
+    vertical-align: middle;
+    display: none;
+    width: 24px;
+    height: 24px;
+    z-index: 50;
+}
+
+#success-icon svg {
+    fill: var(--success-green);
+    height: 20px;
+}
+
+#error-icon svg {
+    fill:var(--error-red);
+    height: 20px;
+}
+
+#warning-icon svg {
+    fill: var(--warning-yellow);
+    height: 20px;
+}
+
+#settings-notification-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    z-index: 11;
+    
+}
+
+/* -----------------------------------
+   Custom Scrollbar for Webkit Browsers
+----------------------------------- */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--button);
+    border-radius: 3px;
+}
+
+#main-panel::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:var(--hover);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent; /* Hides the white square */
+  }
+
+/* Enable scrolling for specific areas */
+#main-panel {
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+}
+
+/* Remove outlines for buttons and icons on click */
+button:focus,
+svg:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+/* Add a keyboard-accessible focus style */
+button:focus-visible,
+svg:focus-visible {
+    outline: 1px solid #ffffff; /* Use a custom outline for keyboard focus */
+    outline-offset: 2px; /* Add spacing around the outline */
+    z-index: 2000;
+}

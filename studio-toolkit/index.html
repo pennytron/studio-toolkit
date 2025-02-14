@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Feather Studios Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section: Contains navigation buttons for the panel -->
+    <div id="header">
+        <h1>Studio Toolkit</h1>
+
+        <div class="icon-group">
+
+            <!-- Favourites Button: Toggles the favourites tab -->
+            <button id="favourites-btn" class="generic-btn" data-tab="favourites" title="Favourites">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M6.32 2.577a49.255 49.255 0 0 1 11.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 0 1-1.085.67L12 18.089l-7.165 3.583A.75.75 0 0 1 3.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93Z" clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <!-- Settings Button: Opens the settings modal -->
+            <button id="settings-btn" class="generic-btn" title="Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM1.5 10.146V6a3 3 0 0 1 3-3h5.379a2.25 2.25 0 0 1 1.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 0 1 3 3v1.146A4.483 4.483 0 0 0 19.5 9h-15a4.483 4.483 0 0 0-3 1.146Z" />
+                </svg>
+                <div id="settings-notification-dot"></div>
+            </button>
+
+            <!-- Help Button: Opens the help modal -->
+            <button id="help-btn" class="generic-btn" title="Help">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 0 1-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 0 1-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 0 1-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584ZM12 18a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                </svg>
+            </button>
+                   
+            <!-- Debug Indicator: Indicates debug mode is active -->
+            <button id="bug-btn" class="bug-btn" data-tab="bug" title="Debug Mode Active">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.478 1.6a.75.75 0 0 1 .273 1.026 3.72 3.72 0 0 0-.425 1.121c.058.058.118.114.18.168A4.491 4.491 0 0 1 12 2.25c1.413 0 2.673.651 3.497 1.668.06-.054.12-.11.178-.167a3.717 3.717 0 0 0-.426-1.125.75.75 0 1 1 1.298-.752 5.22 5.22 0 0 1 .671 2.046.75.75 0 0 1-.187.582c-.241.27-.505.52-.787.749a4.494 4.494 0 0 1 .216 2.1c-.106.792-.753 1.295-1.417 1.403-.182.03-.364.057-.547.081.152.227.273.476.359.742a23.122 23.122 0 0 0 3.832-.803 23.241 23.241 0 0 0-.345-2.634.75.75 0 0 1 1.474-.28c.21 1.115.348 2.256.404 3.418a.75.75 0 0 1-.516.75c-1.527.499-3.119.854-4.76 1.049-.074.38-.22.735-.423 1.05 2.066.209 4.058.672 5.943 1.358a.75.75 0 0 1 .492.75 24.665 24.665 0 0 1-1.189 6.25.75.75 0 0 1-1.425-.47 23.14 23.14 0 0 0 1.077-5.306c-.5-.169-1.009-.32-1.524-.455.068.234.104.484.104.746 0 3.956-2.521 7.5-6 7.5-3.478 0-6-3.544-6-7.5 0-.262.037-.511.104-.746-.514.135-1.022.286-1.522.455.154 1.838.52 3.616 1.077 5.307a.75.75 0 1 1-1.425.468 24.662 24.662 0 0 1-1.19-6.25.75.75 0 0 1 .493-.749 24.586 24.586 0 0 1 4.964-1.24h.01c.321-.046.644-.085.969-.118a2.983 2.983 0 0 1-.424-1.05 24.614 24.614 0 0 1-4.76-1.05.75.75 0 0 1-.516-.75c.057-1.16.194-2.302.405-3.417a.75.75 0 0 1 1.474.28c-.164.862-.28 1.74-.345 2.634 1.237.371 2.517.642 3.832.803.085-.266.207-.515.359-.742a18.698 18.698 0 0 1-.547-.08c-.664-.11-1.311-.612-1.417-1.404a4.535 4.535 0 0 1 .217-2.103 6.788 6.788 0 0 1-.788-.751.75.75 0 0 1-.187-.583 5.22 5.22 0 0 1 .67-2.04.75.75 0 0 1 1.026-.273Z" clip-rule="evenodd" />
+                </svg>
+            </button>         
+        </div>
+    </div>
+
+    <div id="main-panel"> <!-- Main content container -->
+        <a id="top-anchor" tabindex="-1"></a>
+
+        <!-- Favourites Tab: Dynamically populated with user-selected favourites -->
+        <div id="favourites" class="favourites-container">
+            <div class="favourites-contents">
+                <!-- Dynamically added favourite items -->
+            </div>
+        </div>
+
+        <!-- Tabs Section: Dynamically populated tabs based on file structure -->
+        <div id="tabs">
+            <button class="shared-tab-buttons" data-tab="tab1">Error loading tabs</button>
+        </div>
+
+        <!-- Tab Contents: Displays content for selected tabs -->
+        <div id="tab-contents">
+            <div class="tab-content" id="tab1">Error loading scripts</div>
+        </div>
+    </div>
+
+    <!-- SVG Symbols: Reusable icons for favourite and non-favourite states -->
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="non-fav-icon" viewBox="0 0 16 16" fill="currentColor" title="Unfavourite Script"> 
+            <path d="M13 2.75v7.775L4.475 2h7.775a.75.75 0 0 1 .75.75ZM3 13.25V5.475l4.793 4.793L4.28 13.78A.75.75 0 0 1 3 13.25ZM2.22 2.22a.75.75 0 0 1 1.06 0l10.5 10.5a.75.75 0 1 1-1.06 1.06L2.22 3.28a.75.75 0 0 1 0-1.06Z" />
+        </symbol>
+        <symbol id="fav-icon" viewBox="0 0 16 16" fill="currentColor" title="Favourite Script"> 
+            <path d="M3.75 2a.75.75 0 0 0-.75.75v10.5a.75.75 0 0 0 1.28.53L8 10.06l3.72 3.72a.75.75 0 0 0 1.28-.53V2.75a.75.75 0 0 0-.75-.75h-8.5Z" />
+        </symbol>
+    </svg>
+
+    <!-- Modals Section: Overlays for madals; excluding debug -->
+    <div id="overlay"></div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-header">
+            <h2>Settings</h2>
+        </div>
+        <div class="modal-body">
+            <label for="settings-directory">Directory:</label>
+            <div style="display: flex; align-items: center;">
+                <input id="settings-directory" type="text" style="flex: 1;" />
+                <div id="success-icon" style="display: none; margin-left: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div id="error-icon" style="display: none; margin-left: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div id="warning-icon" style="display: none; margin-left: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                    </svg>
+                </div>             
+            </div>
+            <div class="button-group">
+                <button id="settings-browse-btn" class="modal-button">Browse</button>
+                <button id="settings-save-btn" class="modal-button">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal">
+        <div class="modal-header">
+            <h2>Help</h2>
+        </div>
+        <div class="modal-body">
+                    <p>This panel helps you organise and execute your scripts efficiently. Below are quick instructions to get you started.</p>
+            
+                    <p><h2>Features</h2>
+                    <ul>
+                        <strong>Tabs and Subfolders:</strong>
+                            <ul>
+                                <li>Tabs represent the subfolders in your script directory.</li>
+                                <li>Click a tab to view the scripts in that subfolder.</li>
+                                <li>Only valid folders are displayed. Folder names starting with a period, or names between square brackets e.g:  <code>.hidden-folder</code> or <code>[excluded-folder]</code> are automatically excluded.</li>
+                            </ul>
+                        </li>
+                        <strong>Script Execution:</strong>
+                            <ul>
+                                <li>Click on a script name to execute it directly.</li>
+                                <li>Ensure your scripts are in <code>.jsx</code> format and located in the appropriate subfolder.</li>
+                            </ul>
+                        </li>
+                        <strong>Favourites:</strong>
+                            <ul>
+                                <li>Toggle the bookmark icon next to a script to add or remove it from your favourites.</li>
+                                <li>Access all favourited scripts via the "Favourites" icon at the top.</li>
+                            </ul>
+                        </li>
+                    </ul></p>
+            
+                    <p><h2>Tips</h2>
+                    <ul>
+                        <strong>Expand and Collapse Tabs:</strong>
+                            <ul>
+                                <li>Use the arrow icon (► or ▼) to expand or collapse tab contents.</li>
+                                <li>Tabs remember their state as long as the panel remains open.</li>
+                            </ul>
+                        </li>
+                        <strong>Friendly Script Names:</strong>
+                            <ul>
+                                <li>If a <code>descriptions.json</code> file exists in your script directory, it will be used to display user-friendly names for scripts.</li>
+                                <li>For scripts not listed in <code>descriptions.json</code>, default names (file names) are displayed.</li>
+                            </ul>
+                        </li>
+                    </ul></p>
+            
+                    <p><h2>Troubleshooting</h2>
+                    <ul>
+                        <strong>Scripts Not Loading:</strong>
+                            <ul>
+                                <li>Ensure the directory path is set correctly in the settings.</li>
+                                <li>Hidden folders or invalid formats are excluded.</li>
+                            </ul>
+                        </li>
+                        <strong>Favourites Missing:</strong>
+                            <ul>
+                                <li>Favourites are stored locally. If you've cleared After Effects' local storage (different from clearing the cache), re-add your favourites.</li>
+                            </ul>
+                        </li>
+                    </ul></p>
+            
+                    <h2>Additional Help</h2>
+                    <p>For additional support, see the <a href="https://virtualgamingworlds.atlassian.net/wiki/x/jwAVz" id="support-link" title="GFS Toolkit Wiki Page">Golden Feather Studios Toolkit Guide </a></p>
+                    <p>If making your own updates to the script.js, use showDebugModal for console logging by setting DEBUG_MODE to TRUE.</p>
+                    <div class="js-version">
+                        <p id="version-info"></p> <!-- Placeholder for the version -->
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Debug Modal -->
+    <div id="debug-modal" class="modal">
+        <div id="debug-header"><h2>Console Log</h2></div>
+        <div id="debug-body">
+            <div id="debug-messages"></div>
+        </div>
+        <button id="debug-close-button" class="debug-modal-button">Close</button>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="./script.js"></script>
+    <script src="./lib/CSInterface.js"></script>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z" clip-rule="evenodd" />
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
+    
+</body>
+</html>
