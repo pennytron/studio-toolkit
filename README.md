@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/07de9e1b-830c-4ddb-94bd-37fa13944600)# Studio Toolkit – After Effects CEP Panel
+# Studio Toolkit – After Effects CEP Panel
 ### No more File>Scripts, no more hunting through your Downloads folder, or that mess of docked tabs!
 
 - A simple, lightweight CEP panel that makes running After Effects scripts fast and hassle-free.  
