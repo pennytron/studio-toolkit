@@ -168,6 +168,15 @@ function updateTabs(savedDirectory) {
                     );
                 });
 
+                    // If no subfolders exist, show a message
+                    if (filteredSubfolders.length === 0) {
+                        const noSubfoldersMessage = document.createElement("div");
+                        noSubfoldersMessage.className = "empty-folder-message";
+                        noSubfoldersMessage.textContent = "No subfolders found";
+                        tabsContainer.appendChild(noSubfoldersMessage);
+                        return; // Exit early to prevent empty UI
+                    }
+
                     // Step 3: Dynamically create tabs for each subfolder
                     filteredSubfolders.forEach((folder, index) => {
                     const tabId = `tab${index + 1}`;
@@ -301,9 +310,18 @@ function updateFavouritesTab() {
         .split(",")
         .filter((item) => item) // Remove empty entries
         .sort((a, b) => a.localeCompare(b)); // Sort in ascending order
-
-    favourites.forEach((fileName) => {
         
+        // If there are no favourites, display a message
+        if (favourites.length === 0) {
+            const emptyMessage = document.createElement("div");
+            emptyMessage.className = "empty-folder-message";
+            emptyMessage.textContent = "Set a favourite to access it here!";
+            favouritesContainer.appendChild(emptyMessage);
+            return; // Exit early, nothing else to display
+        }
+        
+    favourites.forEach((fileName) => {
+
         // Create a button for the favourite item
         const favouriteActionButton = document.createElement("button");
         favouriteActionButton.className = "favourite-content-button";
@@ -617,6 +635,9 @@ function initSettingsModal() {
         localStorage.setItem("savedDirectory", sanitizedPath);
         updateIcons(sanitizedPath);
         updateTabs(sanitizedPath);
+        // Reset favourites when a new folder is set
+        localStorage.removeItem("favourites"); // Clear stored favourites
+        updateFavouritesTab(); // Refresh the favourites tab UI
     });
 
     // Load the saved directory on modal open
