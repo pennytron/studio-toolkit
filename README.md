@@ -8,6 +8,8 @@
 
 [Click here for a more detailed guide](https://app.gitbook.com/o/R0w5mp98D3kImZbn6Nzp/s/Uyw8hFApMviGRVg5f0F2/)
 
+_Unfortunately this was created only with the English alphabet in mind. I apologise, I wouldn't even know how to test it with characters outside of the English alphabet! I'm an animator, not a coder!_
+
 ### A Note from a Creative, Not a Coder
 
 I’m just a creative who needed a better way to run scripts in After Effects — so I made this.  
