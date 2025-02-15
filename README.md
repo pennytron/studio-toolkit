@@ -1,4 +1,4 @@
-# Studio Toolkit – After Effects CEP Panel
+![image](https://github.com/user-attachments/assets/07de9e1b-830c-4ddb-94bd-37fa13944600)# Studio Toolkit – After Effects CEP Panel
 ### No more File>Scripts, no more hunting through your Downloads folder, or that mess of docked tabs!
 
 - A simple, lightweight CEP panel that makes running After Effects scripts fast and hassle-free.  
@@ -6,7 +6,7 @@
 - Saves time by eliminating the need for multiple script panels; run the script, close the panel, have easy access again later.  
 - Open-source & fully customizable if you want to tweak the look & feel.
 
-[Click here for a more detailed guide](https://app.gitbook.com/o/R0w5mp98D3kImZbn6Nzp/s/Uyw8hFApMviGRVg5f0F2/)
+[Click here for a more detailed guide](https://app.gitbook.com/invite/R0w5mp98D3kImZbn6Nzp/Mx030Bxdo000mFXCGPe2)
 
 _Unfortunately this was created only with the English alphabet in mind. I apologise, I wouldn't even know how to test it with characters outside of the English alphabet! I'm an animator, not a coder!_
 
