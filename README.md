@@ -6,7 +6,7 @@
 - Saves time by eliminating the need for multiple script panels; run the script, close the panel, have easy access again later.  
 - Open-source & fully customizable if you want to tweak the look & feel.
 
-[Click here for a more detailed guide](https://app.gitbook.com/invite/R0w5mp98D3kImZbn6Nzp/Mx030Bxdo000mFXCGPe2)
+[Click here for a more detailed guide](https://pennytron.gitbook.io/studio-toolkit/)
 
 _Unfortunately this was created only with the English alphabet in mind. I apologise, I wouldn't even know how to test it with characters outside of the English alphabet! I'm an animator, not a coder!_
 
